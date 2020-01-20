@@ -61,26 +61,16 @@
   
 
   <!-- ###########################      Bare Stock Variant           #################################### -->
-<!DOCTYPE html>
-<html>
-<head>
-
-<title>3D Model (glTF)</title>
-<meta name="description" content="3D Model (glTF) — A-Frame">
-<script src="https://aframe.io/aframe/dist/aframe-master.min.js"></script>
-</head>
+<!-- include A-Frame obviously -->
+<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs='sourceType: webcam;'>
-  <a-marker preset="hiro">
-<a-assets>
-<a-asset-item id="tree" src="https://aframe.io/aframe/examples/assets/models/tree2.glb"></a-asset-item>
-</a-assets>
-<a-gltf-model src="#tree" rotation="0 45 0"></a-gltf-model>
-<a-entity position="0 0 4">
-<a-camera></a-camera>
-</a-entity>
-</a-scene>
+  <a-scene embedded arjs>
+    <!-- create your content here. just a box for now -->
+    <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+    <!-- define a camera which will move according to the marker position -->
+    <a-marker-camera preset='hiro'></a-marker-camera>
+  </a-scene>
 </body>
-</html>
-
   
