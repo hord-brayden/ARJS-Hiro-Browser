@@ -5,11 +5,27 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+    <body style='margin : 0px; overflow: hidden;'>
+      <a-scene embedded arjs>
+    	<a-marker preset="hiro">
+        <!-- define your gltf asset -->
+        <a-assets>
+            <a-asset-item id="tree" src="/utility_knife/scene.gltf"></a-asset-item>
+          </a-assets>
+          <!-- use your gltf model -->
+          <a-entity gltf-model="##knife"></a-entity>
+    	</a-marker>
+    	<a-entity camera></a-entity>
+      </a-scene>
     <div>
       <div class="secondmaindiv">
         TEST OUTPUT
         </div>
+        <div class="sketchfab-embed-wrapper">
+    <iframe title="A 3D model" width="640" height="480" src="https://sketchfab.com/models/b7d6318375344331849a13f62a765144/embed?autospin=0.2&amp;autostart=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
         </div>
   </body>
 </html>
