@@ -72,11 +72,18 @@
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs>                                                                                 
 <a-marker preset='hiro'>
-      <!--Adding a glTF 2.0 model to your scene-->
-      <a-entity
-      gltf-model-next="src: url(hord-brayden.github.io/busterDrone.gltf);"
-      >
-      </a-entity>
+      <a-assets>
+  <a-asset-item id="bot" src="busterDrone.gltf"></a-asset-item>
+</a-assets>
+
+<!-- Using the asset management system. -->
+<a-gltf-model src="#bot"></a-gltf-model>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
     </a-marker>
   	<a-entity camera></a-entity>
     </a-scene>
