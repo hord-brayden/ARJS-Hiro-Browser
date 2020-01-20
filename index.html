@@ -9,19 +9,20 @@
   <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
     <body style='margin : 0px; overflow: hidden;'>
       <a-scene embedded arjs>
-    	<a-marker preset="hiro">
-        <a-assets>
-          <a-asset-item id="knife" src="/utility_knife/scene.gltf"></a-asset-item>
-        </a-assets>
-        <!-- use your gltf model -->
-        <a-entity gltf-model="#knife" scale="0.01 0.01 0.01"></a-entity>
-        
-    	</a-marker>
+    	<a-marker-camera type='pattern' url='pattern-marker.patt'>
+              <a-box position='0 0.5 0' material='color: yellow;'></a-box>
+            <!--   <a-assets> -->
+                <a-text value="Hello, World!"></a-text>
+            <!--    <a-asset-item id="knife" src="scene.gltf"></a-asset-item>
+             </a-assets> -->
+              <!-- use your gltf model -->
+              <a-entity gltf-model="#knife"></a-entity>
+    	</a-marker-camera>
     	<a-entity camera></a-entity>
       </a-scene>
     <div>
       <div class="secondmaindiv">
-       Updater Input
+        Output Model
         </div>
         <div class="sketchfab-embed-wrapper">
           <!--
@@ -31,4 +32,3 @@
         </div>
   </body>
 </html>
-
