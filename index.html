@@ -61,27 +61,16 @@
   
 
   <!-- ###########################      Bare Stock Variant           #################################### -->
-<!DOCTYPE html>
+<!doctype HTML>
 <html>
-<head>
-
-<meta data-feature="WebVR (For Chrome M59+)" content="ArFv1ZeTwzkhjNE00uAE+XtiQB41fwqG/TqlFMLrepd9sforQSvQE/tgfIbUMYNuNre4QR1k4/z8xp2mV3dbhwwAAABeeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjEiLCJleHBpcnkiOjE1MDEyMTcwMDIsImlzU3ViZG9tYWluIjp0cnVlfQ==">
-<meta charset="utf-8">
-<title>3D Model (glTF)</title>
-<meta name="description" content="3D Model (glTF) — A-Frame">
-<script src="https://aframe.io/aframe/dist/aframe-master.min.js"></script>
-</head>
-<body>
-  <a-scene embedded arjs>
-  <a-marker preset="hiro">
-<a-assets>
-<a-asset-item id="tree" src="https://aframe.io/aframe/examples/assets/models/tree2.glb"></a-asset-item>
-</a-assets>
-<a-gltf-model src="#tree" rotation="0 45 0"></a-gltf-model>
-<a-entity position="0 0 4">
-<a-camera></a-camera>
-</a-entity>
-</a-scene>
-</body>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs>
+  	<a-marker preset="hiro">
+            <a-box position='0 0.5 0' material='color: yellow;'></a-box>
+  	</a-marker>
+  	<a-entity camera></a-entity>
+    </a-scene>
+  </body>
 </html>
-
