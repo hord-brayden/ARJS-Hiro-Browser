@@ -66,11 +66,46 @@
 <!-- include ar.js for A-Frame -->
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs>
-    <!-- create your content here. just a box for now -->
-    <a-text value="Hello, gorgeous"></a-text>
-    <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-    <!-- define a camera which will move according to the marker position -->
+ <a-scene>
+      <a-assets timeout="30000">
+        <!-- Model source: https://sketchfab.com/3d-models/spinosaurus-2135501583704537907645bf723685e7
+             Model author: https://sketchfab.com/VapTor
+             Model license: CC Attribution -->
+        <a-asset-item id="spinosaurus" src="https://cdn.glitch.com/324a5290-5aa7-4efc-92d6-ae0736433b12%2Fspinosaurus.glb" response-type="arraybuffer"></a-asset-item>
+      </a-assets>
+      
+      <a-camera position="0 1.2 0"></a-camera>
+      
+      <!-- Environment for 2D and VR viewing. It's auto-hidden in AR mode. -->
+      <a-entity environment="preset: forest; lighting: none; shadow: none; lightPosition: 0 2.15 0"
+                hide-in-ar-mode></a-entity>
+      
+      <a-entity id="dino" position="-1 0 -3" scale="0.5 0.5 0.5">
+        <a-entity position="0 2.15 0" rotation="0 55 0"
+                  gltf-model="#spinosaurus"
+                  animation-mixer
+                  shadow="cast: true; receive: false"></a-entity>
+      </a-entity>  
+      
+      <a-entity light="type: ambient; intensity: 0.5;"></a-entity>
+      <a-light type="directional"
+               light="castShadow: true;
+                      shadowMapHeight: 1024;
+                      shadowMapWidth: 1024;
+                      shadowCameraLeft: -7;
+                      shadowCameraRight: 5;
+                      shadowCameraBottom: -5;
+                      shadowCameraTop: 5;"
+               id="light"
+               target="dino"
+               position="-5 3 1.5"></a-light>
+
+      <!-- This shadow-receiving plane is only visible in AR mode. -->
+      <a-plane height="15" width="15" position="0 0 -3" rotation="-90 0 0"
+               shadow="receive: true"
+               ar-shadows="opacity: 0.3"
+               visible="false"></a-plane>
+
     <a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene>
 </body>
