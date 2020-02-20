@@ -68,6 +68,9 @@
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs>
   	<a-marker preset="hiro">
+	<a-entity id="drone" position="0 0 0" scale="1 1 1" gltf-model-next="src: url(hord-brayden.github.io/models/busterDrone.gltf);"  animation-mixer>
+      </a-entity>
+		<!--
           <a-text value="Don't be such a square" geometry="primitive:plane" ></a-text>
       <a-mixin id="text"
 			text="align: center; width: 3; value: I am text.">
@@ -75,7 +78,7 @@
             <a-box position='0 0.5 0' material='color: blue;' rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
               <a-entity position="5 0 0"></a-entity>
             </a-box>
-            
+            -->
   	</a-marker>
   	<a-entity camera></a-entity>
     </a-scene>
